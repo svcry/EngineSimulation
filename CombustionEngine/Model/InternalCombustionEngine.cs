@@ -7,11 +7,9 @@
         private float _coolingCoeff { get; }
 
         public override float[] RotationSpeed { get; set; }
-
         public override float[] Torque { get; set; }
         public override float EngineTemp { get; set; }
-        public override float TimeElapsed { get; set; } = 0.0F;
-
+        public override float TimeElapsed { get; set; }
         public override float AmbientTemp { get; set; }
 
         public InternalCombustionEngine(float momentOfInertia, float overheatingTemp, float heatingSpeedCoeff,
