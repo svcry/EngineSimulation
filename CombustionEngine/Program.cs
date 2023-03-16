@@ -4,7 +4,8 @@ using EngineSimulation.Model;
 
 namespace EngineSimulation {
     class Program {
-        static void Main(string[] args) {
+        static void RunTestStand()
+        {
             Console.Write("Enter the ambient temperature:");
             float ambitientTemp = float.Parse(Console.ReadLine());
 
@@ -19,6 +20,10 @@ namespace EngineSimulation {
             float timeElapsed = testStand.RunTest();
 
             Console.ReadLine();
+        }
+        static void Main(string[] args) 
+        {
+            RunTestStand();
         }
     }
 }

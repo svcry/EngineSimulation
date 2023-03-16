@@ -8,9 +8,9 @@
 
         public override float[] RotationSpeed { get; set; }
         public override float[] Torque { get; set; }
-        public override float EngineTemp { get; set; }
+        public override float EngineTemp { get; protected set; }
         public override float TimeElapsed { get; set; }
-        public override float AmbientTemp { get; set; }
+        public override float AmbientTemp { get; protected set; }
 
         public InternalCombustionEngine(float momentOfInertia, float overheatingTemp, float heatingSpeedCoeff,
             float rotationSpeedCoeff, float coolingCoeff, float initialEngineTemp) {
@@ -24,13 +24,13 @@
 
         protected override float GetTorque(float[] rotationSpeed, float[] torque, float point) {
             // Значение кусочно-линейной функции в точке point (используется интерполяционный многочлен Лагранжа)
-            int n = rotationSpeed.Length;
+            int numOfNotes = rotationSpeed.Length;
             float result = 0;
 
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < numOfNotes; i++) {
                 float term = torque[i];
 
-                for (int j = 0; j < n; j++) {
+                for (int j = 0; j < numOfNotes; j++) {
                     if (i != j) {
                         term *= (point - rotationSpeed[j]) / (rotationSpeed[i] - rotationSpeed[j]);
                     }
