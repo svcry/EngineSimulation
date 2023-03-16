@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace EngineSimulation.Model
 {
@@ -75,7 +71,7 @@ namespace EngineSimulation.Model
 
                 // Рассчитываем новые значения скорости и температуры
                 EngineTemp += heatingSpeed - coolingSpeed;
-                TimeElapsed += 1.0F; // Увеличиваем время на 1 секунду
+                TimeElapsed += 1.0F;
             }
             return TimeElapsed;
         }

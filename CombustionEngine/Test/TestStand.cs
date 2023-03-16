@@ -1,9 +1,6 @@
 ﻿using EngineSimulation.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace EngineSimulation.Test
 {
@@ -16,11 +13,11 @@ namespace EngineSimulation.Test
             this.engine = engine;
         }
 
-        public double RunTest()
+        public float RunTest()
         {
-            double timeElapsed = engine.SimulateEngine();
+            float timeElapsed = engine.SimulateEngine();
 
-            Console.WriteLine($"Двигатель перегрелся через {timeElapsed} секунд");
+            Console.WriteLine($"Engine overheated after {timeElapsed} seconds");
 
             return timeElapsed;
         }
