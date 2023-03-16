@@ -9,14 +9,14 @@ namespace EngineSimulation.Model
     public abstract class Engine
     {
         // Общие свойства и методы для всех типов двигателей
-        public abstract double[] RotationSpeed { get; set; }
-        public abstract double[] Torque { get; set; }
-        public abstract double EngineTemp { get; set; }
-        public abstract double TimeElapsed { get; set; }
-        public abstract double AmbientTemp { get; set; }
+        public abstract float[] RotationSpeed { get; set; }
+        public abstract float[] Torque { get; set; }
+        public abstract float EngineTemp { get; set; }
+        public abstract float TimeElapsed { get; set; }
+        public abstract float AmbientTemp { get; set; }
 
-        protected abstract double GetTorque(double[] RotationSpeed, double[] Torque, double point);
+        protected abstract float GetTorque(float[] RotationSpeed, float[] Torque, float point);
 
-        public abstract double SimulateEngine();
+        public abstract float SimulateEngine();
     }
 }
